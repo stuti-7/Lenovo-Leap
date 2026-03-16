@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital Clock</title>
+
+<style>
+body{
+    background:#e8b4c0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial, sans-serif;
+}
+
+.clock-box{
+    background:#eea3b4;
+    color:#8c4255;
+    padding:100px 300px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.time{
+    font-size:72px;
+    letter-spacing:4px;
+}
+
+.date{
+    color:#b05570;
+    font-size:29px;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="clock-box">
+    <div class="time" id="time">00:00:00</div>
+    <div class="date" id="date"></div>
+</div>
+
+<script>
+
+function pad(n){
+    return n < 10 ? "0"+n : n;
+}
+
+function updateClock(){
+
+    const now = new Date();
+
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
+
+    let period = hour >= 12 ? "PM" : "AM";
+
+    hour = hour % 12;
+    if(hour === 0) hour = 12;
+
+    const timeString =
+        pad(hour) + ":" +
+        pad(minute) + ":" +
+        pad(second) + " " + period;
+
+    document.getElementById("time").innerText = timeString;
+
+    const dayNames = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+    const today =
+        dayNames[now.getDay()] + ", " +
+        now.getDate() + " " +
+        monthNames[now.getMonth()] + " " +
+        now.getFullYear();
+
+    document.getElementById("date").innerText = today;
+}
+
+updateClock();
+setInterval(updateClock,1000);
+
+</script>
+
+</body>
+</html>

@@ -48,8 +48,8 @@ edureach/
 ```bash
 cd backend
 npm install
-# Edit .env: set MONGO_URI and JWT_SECRET
-npm start
+# Change .env.example to .env after setting MONGO_URI(mongodb connection string) and JWT_SECRET
+npm start (create node_modules)
 ```
 
 ### Frontend

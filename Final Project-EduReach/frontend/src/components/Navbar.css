@@ -1,0 +1,79 @@
+.navbar {
+  background: var(--primary);
+  padding: 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  color: white;
+  letter-spacing: -0.3px;
+}
+.brand-icon { font-size: 24px; }
+.navbar-brand strong { color: var(--accent); }
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+}
+.navbar-links a {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+.navbar-links a:hover, .navbar-links a.active {
+  color: white;
+  border-bottom-color: var(--accent);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-actions .btn-secondary {
+  color: white;
+  border-color: rgba(255,255,255,0.5);
+}
+.navbar-actions .btn-secondary:hover {
+  border-color: white;
+  color: white;
+  background: rgba(255,255,255,0.1);
+}
+
+.user-greeting {
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-tag {
+  background: var(--accent);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

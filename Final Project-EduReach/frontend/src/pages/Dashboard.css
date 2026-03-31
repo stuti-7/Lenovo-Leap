@@ -1,0 +1,97 @@
+.dashboard-page { min-height: calc(100vh - 64px); }
+
+.dashboard-hero {
+  background: var(--primary);
+  padding: 48px 0;
+}
+.dashboard-hero h1 { color: white; font-size: 32px; margin-bottom: 6px; }
+.dashboard-hero p { color: rgba(255,255,255,0.6); font-size: 16px; }
+
+.dashboard-body {
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.dash-stat-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dash-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+.dash-stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+.dash-section { margin-bottom: 40px; }
+.dash-section h2 { font-size: 22px; margin-bottom: 16px; }
+.dash-section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.view-all { color: var(--accent); font-size: 14px; font-weight: 600; }
+
+.subject-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.subject-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.subject-chip:hover { border-color: var(--accent); color: var(--accent); }
+.subject-count {
+  background: var(--surface2);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.recent-grid { display: flex; flex-direction: column; gap: 10px; }
+.recent-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+.recent-card:hover { transform: none; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.recent-icon { font-size: 24px; }
+.recent-info { flex: 1; }
+.recent-info h4 { font-size: 14px; margin-bottom: 3px; }
+.recent-subject { font-size: 12px; color: var(--text-muted); }
+
+.admin-cta {
+  background: linear-gradient(135deg, var(--accent2), var(--primary));
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.admin-cta h3 { font-size: 20px; margin-bottom: 6px; }
+.admin-cta p { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+@media (max-width: 768px) {
+  .dash-stats { grid-template-columns: repeat(2, 1fr); }
+  .admin-cta { flex-direction: column; gap: 16px; text-align: center; }
+}
